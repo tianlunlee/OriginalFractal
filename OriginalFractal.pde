@@ -1,38 +1,48 @@
 //DO NOT RUN CODE YET
 
 
-
 int rcolor = (int)(Math.random()*255);
+
+
 public void setup() {
 size(600, 600);
-background(0);
+
+
 
 }
 
 
 public void draw(){
+	background(0);
 
 
-mouseClicked();
+
+  Fractal(0);
 }
 
-public void mouseClicked(){
- if (mousePressed){
-   Fractal(200);
- }
-}
+
+ 
+
 
 public void Fractal(int n) {
-	stroke(sqrt(mouseX*mouseX + mouseY+mouseY), mouseX, mouseY);
-	fill(0);
-	eX= mouseX +1;
-	eY = mouseY +;
- if ( n<= 0) {
+	stroke(.5*sqrt(mouseX*mouseX + mouseY+mouseY), mouseX, mouseY);
+	noFill();
+   if (n >= 200 && mousePressed ) {
+   ellipse(mouseX, mouseY, 0, 0);
+ }
+ if ( n >= 300) {
  	ellipse(mouseX, mouseY, 0, 0);
  }
+
 else {
 	ellipse(mouseX, mouseY, n, n);
-    Fractal(n-1 );
+    Fractal(n+ 10 );
 }
+}
+
+public void Fractal2(int x, y, rX, rY){
+   stroke(x,y,sqrt(rX*rX + rY*rY));
+   
+
 
 }
