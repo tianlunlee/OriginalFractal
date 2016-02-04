@@ -35,14 +35,27 @@ public void Fractal(int n) {
  }
 
 else {
-	ellipse(mouseX, mouseY, n, n);
+	
+	ellipse(mouseX+n, mouseY+n, n, n);
+	ellipse(mouseX-n, mouseY-n, n, n);
+	ellipse(mouseX+n/2, mouseY-n/2, n, n);
+	ellipse(mouseX-n/2, mouseY+n/2, n, n);
+	translate(mouseX, mouseY, 0);
+
+   	ellipse(mouseX+3*n/2, mouseY-3*n/2, n, n);
+	ellipse(mouseX-3*n/2, mouseY+3*n/2, n, n);
+    
+    ellipse(mouseX+n, mouseY+n, n/2, n/2);
+	ellipse(mouseX-n, mouseY-n, n/2, n/2);
+
+	ellipse(mouseX+n, mouseY, n, n);
+	ellipse(mouseX-n, mouseY, n, n);
+
+	ellipse(mouseX, mouseY+n, n, n);
+	ellipse(mouseX, mouseY-n, n, n);
+
+ 	translate(-mouseX, -mouseY, 0);
     Fractal(n+ 10 );
 }
 }
 
-public void Fractal2(int x, y, rX, rY){
-   stroke(x,y,sqrt(rX*rX + rY*rY));
-   
-
-
-}
